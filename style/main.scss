@@ -1,0 +1,35 @@
+@import './fonts';
+@import './variables';
+@global './global';
+@import './mixins';
+@import './transitions';
+@import './gradientbg';
+@import './login';
+@import './leaderboard';
+@import './myleads';
+@import './newlead';
+@import './bottom-navigation';
+@import './titlebar';
+@import './takephoto';
+@import './registerdetails';
+@import './itembar';
+@import './mdl-textfield';
+
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+}
+
+li {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}

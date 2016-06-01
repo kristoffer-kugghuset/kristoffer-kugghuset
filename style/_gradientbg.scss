@@ -1,0 +1,8 @@
+div#background {
+  z-index: 0;
+  @include radial-gradient($gradient-inner, $gradient-outer);
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  position: fixed;
+}

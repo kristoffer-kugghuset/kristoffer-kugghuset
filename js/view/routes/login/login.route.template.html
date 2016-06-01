@@ -1,0 +1,36 @@
+<div class="__login">
+
+  <div v-bind:class="{'color': allowSubmit() }" class="login-logo"></div>
+
+  <div class="login-textbox">
+    <p></p>
+  </div>
+
+  <div class="login-form">
+    <form v-on:submit.prevent="onSubmit">
+        <div class="flex-form">
+          <div class="input-field">
+            <input type="text" name="username" v-model="email" placeholder="Email">
+          </div>
+          <div class="input-field">
+            <input type="password" v-model="password" placeholder="Password">
+          </div>
+          <div class="unauthorized" v-show="unauthorized">
+            <p>Sorry, wrong username or password.</p>
+          </div>
+          <div class="unauthorized" v-show="privateMode">
+            <p>Sorry, can't log in. <br>Check if browser is in private mode.</p>
+          </div>
+          <div>
+            <button disabled="{{ !allowSubmit() }}">Log in</button>
+          </div>
+        </div>
+    </form>
+  </div>
+
+<!-- Outcommented for now -->
+  <!--<div class="login-textbox">
+    <p><a href="/#!/login">Forgot your password?</a></p>
+  </div>-->
+
+</div>

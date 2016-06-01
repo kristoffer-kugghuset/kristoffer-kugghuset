@@ -1,0 +1,52 @@
+<titlebar title="My Leads"></titlebar>
+
+<div class="__myleads">
+
+  <div class="user-info-head">
+    <div class="user-text"><h2>{{currentUserName + "   " + currentUserScore + "p" | truncate 35 '...'}}</h2></div>
+    <div v-if="!!currentUserTeam" class="user-text"><p>{{currentUserTeam | truncate 50 '...'}}</p></div>
+  </div>
+
+  <div class="legend-head">
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-icon">
+          <img src="assets/img/lead-open.svg">
+        </div>
+        <div class="legend-label"><p>In progress</p></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-icon">
+          <img src="assets/img/lead-win.svg">
+        </div>
+        <div class="legend-label"><p>Won</p></div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-icon">
+          <img src="assets/img/lead-fail.svg">
+        </div>
+        <div class="legend-label"><p>Lost</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itembar-container">
+
+  <ul style="list-style-type:none">
+    <li v-for="lead in myLeads">
+        <lead-item
+        v-bind:title="lead.orgName",
+        v-bind:subtitle="lead.street",
+        v-bind:status="lead.status",
+        v-bind:id="lead.id",
+        v-bind:on-deleted="onDeleted"
+        >
+        </lead-item>
+    </li>
+  </ul>
+
+  </div>
+
+</div>
+
+<bottom-navigation></bottom-navigation>

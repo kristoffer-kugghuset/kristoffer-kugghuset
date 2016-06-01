@@ -1,0 +1,21 @@
+div#titlebar {
+  padding-top: 20px;
+  background: $titlebar-background-color;
+  height: $titlebar-height;
+  width: 100%;
+  position: fixed; 
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  -moz-box-shadow:    0px 2px 3px 1px #EBEBEB;
+  -webkit-box-shadow: 0px 2px 3px 1px #EBEBEB;
+  box-shadow:         0px 2px 3px 1px #EBEBEB;
+
+  h1 {
+  	color: $text-color-invert;
+  	margin: 0px;
+  }
+}

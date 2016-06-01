@@ -1,0 +1,108 @@
+.__myleads {
+	
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $text-color;
+  background: $background-color;
+  width: 100%;
+  position: relative;
+  top: $titlebar-height;
+  height: calc(100vh - #{$bottom-nav-height} - #{$titlebar-height});
+
+  .user-info-head {
+    background: $light-gray;
+    min-height: 80px;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-beteen;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -moz-box-shadow:    0px 2px 3px 3px #EBEBEB inset;
+    -webkit-box-shadow: 0px 2px 3px 3px #EBEBEB inset;
+    box-shadow:         0px 2px 3px 3px #EBEBEB inset;
+
+    h2 {
+      font-size: 1.2em;
+      color: $text-color-highlight;
+      margin-bottom: 5px;
+      margin-top: 10px;
+      white-space: pre;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      white-space: pre;
+    }
+  }
+
+  .legend-head {
+  	height: 50px;
+  	width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    -moz-box-shadow:    0px 1px 0px 0px #EBEBEB;
+    -webkit-box-shadow: 0px 1px 0px 0px #EBEBEB;
+    box-shadow:         0px 1px 0px 0px #EBEBEB;
+
+    .legend {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 80%;
+      height: 40px; 
+      display: -webkit-flex;
+      display: flex;
+      overflow: hidden;
+      justify-content: space-between;
+
+      .legend-item {
+        display: -webkit-flex;
+        display: flex;
+
+        .legend-icon {
+          display: -webkit-flex;
+          display: flex;
+          -webkit-flex-direction: column;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+          width: 30px;
+          margin: 0px;
+          img {
+            width: 65%;
+            height: 65%;
+          }
+        }
+
+        .legend-label {
+          display: -webkit-flex;
+          display: flex;
+          -webkit-flex-direction: column;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+          p {
+            margin: 0px;
+            pading: 0px;
+          }
+        }
+
+      }
+    }
+  }
+  
+}

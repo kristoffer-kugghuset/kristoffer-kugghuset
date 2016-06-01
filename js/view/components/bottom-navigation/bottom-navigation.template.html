@@ -1,0 +1,36 @@
+<div id="bottom-navigation">
+
+	<div 
+  class="nav-button" 
+  v-bind:class="{ 
+    'myleads-inactive': $route.name != 'myleads',
+    'myleads-active': $route.name == 'myleads'
+  }" 
+  id="myleads" 
+  v-link="{ path: 'myleads' }">
+
+  </div>
+
+	<div 
+  class="nav-button" 
+  v-bind:class="{ 
+    'newlead-inactive': $route.name != 'newlead',
+    'newlead-active': $route.name == 'newlead'
+  }" 
+  id="newlead" 
+  v-link="{ path: 'newlead' }">
+
+  </div>
+
+	<div 
+  class="nav-button last" 
+  v-bind:class="{ 
+    'leaderboard-inactive': $route.name != 'leaderboard',
+    'leaderboard-active': $route.name == 'leaderboard'
+  }" 
+  id="leaderboard" 
+  v-link="{ path: 'leaderboard' }">
+
+  </div>
+
+</div>

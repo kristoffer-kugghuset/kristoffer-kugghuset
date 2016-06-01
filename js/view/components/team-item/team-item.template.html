@@ -1,0 +1,11 @@
+<div class="itembar">
+	<div class="icon">
+		<img v-bind:src="icon"></img>
+	</div>
+	<div class="title">
+		<p><b>{{teamName | truncate 22 '...'}}</b></p>
+	</div>
+	<div class="score">
+		<p>{{points}}p</p>
+	</div>
+</div>

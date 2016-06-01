@@ -1,0 +1,11 @@
+<div class="itembar">
+	<div class="icon">
+		<img v-bind:src="icon"></img>
+	</div>
+	<div class="title">
+		<p><b>{{title | truncate 22 '...'}}</b></p>
+		<p>{{subtitle | truncate 22 '...'}}</p>
+	</div>
+	<div class="score delete-lead" v-on:click="deleteLead">
+	</div>
+</div>

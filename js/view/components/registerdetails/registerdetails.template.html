@@ -1,0 +1,84 @@
+<div id="close" v-on:click="exitView"></div>
+
+<div id="loading" v-if="isLoading"><h1><span class="loading-animation">Uploading lead...</h1></span></div>
+
+<div id="registerdetails">
+
+  <h1>Register lead</h1>
+
+  <div id="takephoto">
+    <p>Take up to three pictures of card terminals, receipts and location or choose  from your photos.</p>
+    <filedrop></filedrop>
+  </div>
+
+  <div class="register-form">
+    <form novalidate>
+        <div class="flex-form">
+
+          <mdl-textfield label="Company name (required)" :value.sync="leadDetails.orgName"></mdl-textfield>
+
+          <mdl-textfield label="Street name and number" :value.sync="leadDetails.street"></mdl-textfield>
+
+          <mdl-textfield label="Contact Person (required)" :value.sync="leadDetails.contactPerson"></mdl-textfield>
+
+          <mdl-textfield label="Phone number (required)" :value.sync="leadDetails.mobilePhone"></mdl-textfield>
+
+          <mdl-textfield label="Email" :value.sync="leadDetails.email"></mdl-textfield>
+
+          <div class="divider">
+            <h1>Product details</h1>
+          </div>
+
+          <div class="input-field">
+            <select v-model="leadDetails.provider">
+              <option value="" disabled selected>Payment provider</option>
+              <option value="Babs/Swedbank">Babs/Swedbank</option>
+              <option value="Teller">Teller</option>
+              <option value="Handelsbanken">Handelsbanken</option>
+              <option value="Elavon">Elavon</option>
+              <option value="Nordea">Nordea</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <select v-model="leadDetails.terminal">
+              <option value="" disabled selected>Terminal</option>
+              <option value="Verifone">Verifone</option>
+              <option value="Nets">Nets</option>
+              <option value="Onslip">Onslip</option>
+              <option value="Payex">Payex</option>
+              <option value="Babs Paylink">Babs Paylink</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <div class="month-label"><p>Contract to:<p></div>
+            <input class="month non-mdl" type="month" v-model="leadDetails.contractExpiration" placeholder="When does the contract expire?">
+          </div>
+
+          <div class="input-field">
+            <select v-model="leadDetails.product">
+              <option value="" disabled selected>Bambora product</option>
+              <option value="Bambora ONE">Bambora ONE</option>
+              <option value="Bambora Growth Capital">Bambora Growth Capital</option>
+              <option value="Acceptance">Acceptance</option>
+              <option value="Device">Device</option>
+            </select>
+          </div>
+          <mdl-textfield label="Comments" :value.sync="leadDetails.comments" textarea rows="6"></mdl-textfield>
+        </div>
+    </form>
+    <div class="error" v-show="emailInvalid">
+      <p>Invalid email address</p>
+    </div>
+    <div class="error" v-show="missingRequiredFields">
+      <p>Some required information is missing</p>
+    </div>
+    <div class="button-div">
+      <button v-on:click="submitLead" disabled="{{ !!missingRequiredFields }}">Save lead</button>
+    </div>
+  </div>
+
+</div>

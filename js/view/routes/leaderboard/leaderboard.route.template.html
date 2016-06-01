@@ -1,0 +1,72 @@
+<div class="__leaderboard">
+
+  <titlebar title="Leaderboard"></titlebar>
+
+  <div class="content-head">
+    <div class="top-menu">
+      <div class="menu-item" v-on:click="toggleShowGlobal" v-bind:class="{ 'active-item': showGlobal }">
+        <p>All</p>
+      </div>
+      <div class="menu-item middle" v-on:click="toggleShowTeams" v-bind:class="{ 'active-item': showTeams }">
+        <p>Teams</p>
+      </div>
+      <div class="menu-item" v-on:click="toggleShowMyTeam" v-bind:class="{ 'active-item': showMyTeam }">
+        <p>Your team</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="itembar-container">
+
+	  <ul style="list-style-type:none" v-if="showGlobal">
+	    <li v-for="user in leaderBoardGlobal | orderBy 'score' -1">
+	      <user-item 
+        v-bind:first-name="user.userFirstName" 
+        v-bind:last-name="user.userLastName" 
+        v-bind:points="user.score" 
+        v-bind:team="user.teamName" 
+        >
+        </user-item>
+	    </li>
+	  </ul>
+
+    <ul style="list-style-type:none" v-if="showTeams">
+      <li v-for="team in filteredLeaderBoardTeams | orderBy 'score' -1">
+        <team-item
+        v-bind:team-name="team.teamName" 
+        v-bind:points="team.score" 
+        >
+        </team-item>
+      </li>
+      <li v-if="filteredLeaderBoardTeams.length == 0">
+        <placeholder-item
+        text="No teams have registered leads yet..." 
+        >
+        </placeholder-item>
+      </li>
+    </ul>
+
+    <ul style="list-style-type:none" v-if="showMyTeam">
+      <li v-for="user in leaderBoardMyTeam | orderBy 'score' -1">
+        <user-item 
+        v-bind:first-name="user.userFirstName" 
+        v-bind:last-name="user.userLastName" 
+        v-bind:points="user.score" 
+        v-bind:team="user.teamName" 
+        >
+        </user-item>
+      <li v-if="leaderBoardMyTeam.length == 0">
+        <placeholder-item
+        text="Your're not on a team with registered leads yet..." 
+        >
+        </placeholder-item>
+      </li>
+      </li>
+    </ul>
+
+
+  </div>
+
+  <bottom-navigation></bottom-navigation>
+
+</div>

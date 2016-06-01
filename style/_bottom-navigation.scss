@@ -1,0 +1,45 @@
+div#bottom-navigation {
+  height: $bottom-nav-height;
+  width: 100%;
+  bottom: 0px;
+  position: fixed; 
+  display: -webkit-flex;
+  display: flex;
+  z-index: 99;
+
+  -moz-box-shadow:    0px -1px 0px 0px #EBEBEB;
+  -webkit-box-shadow: 0px -1px 0px 0px #EBEBEB;
+  box-shadow:         0px -1px 0px 0px #EBEBEB;
+
+  .nav-button {
+    -webkit-flex-grow: 1;
+  	flex-grow: 1;
+    background: $background-color;
+    cursor: pointer;
+  }
+
+  .myleads-active {
+    @include button-background-image('myleads.active.icon');
+  }
+
+  .myleads-inactive {
+    @include button-background-image('myleads.inactive.icon');
+  }
+
+  .newlead-active {
+    @include button-background-image('addlead.active.icon');
+  }
+
+  .newlead-inactive {
+    @include button-background-image('addlead.inactive.icon');
+  }
+
+  .leaderboard-active {
+    @include button-background-image('leaderboard.active.icon');
+  }  
+
+  .leaderboard-inactive {
+    @include button-background-image('leaderboard.inactive.icon');
+  }  
+
+}

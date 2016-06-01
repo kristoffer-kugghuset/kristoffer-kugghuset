@@ -1,0 +1,15 @@
+.__newlead {
+	
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: $text-color;
+  background: $background-color;
+  width: 100%;
+  position: relative;
+  height: calc(100vh - #{$bottom-nav-height});
+  
+}
